@@ -1,2 +1,5 @@
-git add     添加文件
+git add     添加文件至暂存区
 git commit 提交至仓库   -m 添加说明
+git reset --hard HEAD^版本回退 一个^代表回退一个版本，或者可以直接写commit id
+git status 查看目前状态(查看工作区与暂存区差别）
+git diff HEAD --文件名 比较工作区与版本库最新版的区别
