@@ -1,5 +1,27 @@
+最基础的两个功能：
 git add     添加文件至暂存区
 git commit 提交至仓库   -m 添加说明
+
 git reset --hard HEAD^版本回退 一个^代表回退一个版本，或者可以直接写commit id
 git status 查看目前状态(查看工作区与暂存区差别）
 git diff HEAD --文件名 比较工作区与版本库最新版的区别
+
+git push origin master 把本地master分支提交至GitHub
+git remote add origin git@server-name:path/repo-name.git 关联远程库
+git clone  //ssh
+                 git@地址
+                 //https
+                http地址
+git checkout -b 分支name   创建并切换到该分支
+git branch 查看所有分支   -d 删除分支
+git checkout master或任何分支名 切换到该分支
+
+git merge 分支名 将分支合并到master
+
+git switch -c <name> 创建并切换到该分支
+git switch <name> 切换到
+
+git tag v1.0 将该分支打标签  -a 指定标签名
+                                                         -m 指定说明文字
+                                                          -d删除标签
+git push origin <tagname> 标签推送到远程
