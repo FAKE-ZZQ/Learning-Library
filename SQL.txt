@@ -1,0 +1,37 @@
+1.主键选择不要带有业务含义的
+
+
+sql基本语句：
+条件查询：SELECT * FROM <表名> WHERE <条件表达式>;
+条件表达式：AND OR NOT
+
+投影查询：使用SELECT 列1, 列2, 列3 FROM <表名>；
+
+排序：加入order by 子语句  ASC 升序（默认），DESC 降序。
+
+分页：使用LIMIT <M> OFFSET <N>可以对结果集进行分页，每次查询返回结果集的一部分；
+分页查询需要先确定每页的数量和当前页数，然后确定LIMIT和OFFSET的值。
+
+聚合查询：2个例子 SELECT COUNT(*) boys FROM students WHERE gender = 'M';
+                  SELECT AVG(score) average FROM students WHERE gender = 'M';计算男生平均成绩:
+			
+         分组查询 SELECT COUNT(*) num FROM students GROUP BY class_id; 依据班级id一次查询每个班级的count数量
+
+连接查询: 例：选出所有学生
+               SELECT s.id, s.name, s.class_id, s.gender, s.score FROM students s;
+              选出所有学生，同时返回班级名称
+			   SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score
+               FROM students s
+               INNER JOIN classes c
+               ON s.class_id = c.id;
+			   
+			   先确定主表，仍然使用FROM <表1>的语法；
+               再确定需要连接的表，使用INNER JOIN <表2>的语法；
+               然后确定连接条件，使用ON <条件...>，这里的条件是s.class_id = c.id，表示students表的class_id列与classes表的id列相同的行需要连接；
+               可选：加上WHERE子句、ORDER BY等子句。
+			   
+			   
+			   
+插入：INSERT INTO <表名> (字段1, 字段2, ...) VALUES (值1, 值2, ...);
+更新：UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;
+删除：DELETE FROM <表名> WHERE ...;
